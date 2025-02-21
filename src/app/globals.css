@@ -1,42 +1,217 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tailwindcss";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+html {
+  height: 100%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html, body {
+  background-color: #1b1b1b;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+
+.bg {
+  animation: slide 3s ease-in-out;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.7;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: 9999; /* Ensure it overlays content */
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  left: 50%;
+  padding: 10vmin;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
   }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+.hover-underline {
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline::after,
+.hover-underline::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #0a2342, #001);
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+  top: -5px;
+  transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-btn {
+  --s: 50px; /* the size of the image */
+  --b: 8px; /* the border thickness*/
+  --g: 14px; /* the gap */
+  --c: #0a2342; /* the color */
+
+  width: var(--s);
+  aspect-ratio: 1;
+  outline: calc(var(--s) / 2) solid transparent;
+  outline-offset: calc(var(--s) / -2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.nav-btn:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
+}
+
+.nav-btn + .nav-btn {
+  border-radius: 100%;
+}
+
+.liquid-morph-element {
+  background: #0a2342;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.liquid-morph-element span {
+  color: #fff;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.liquid-morph-element::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(#0ff 0deg, #0a2342 120deg, #0ff 240deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.liquid-morph-element:hover {
+  border-radius: 10px;
+  transform: rotate(15deg);
+}
+
+.liquid-morph-element:hover::before {
+  opacity: 0.5;
+  transform: scale(2);
+}
+
+.box-shadow {
+  -webkit-box-shadow: 27px 12px 2px 0px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 27px 12px 2px 0px rgba(255, 255, 255, 1);
+  box-shadow: 27px 12px 2px 0px rgba(255, 255, 255, 1);
+}
+
+.container {
+  position: relative;
+  max-width: 1100px; /* Allow it to shrink on smaller screens */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+.container .card {
+  position: relative;
+  max-width: 300px;
+  height: 215px;
+  background-color: #fff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+}
+.container .card:hover {
+  height: 350px;
+}
+
+.container .card .image {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  top: -50%;
+  left: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.container .card .image Image {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.container .card .content {
+  position: relative;
+  top: -70px;
+  padding: 10px 15px;
+  color: #111;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+  margin-top: 30px;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
 }
