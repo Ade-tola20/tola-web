@@ -9,7 +9,7 @@ export default function page() {
             <div className='w-full text-center space-y-2'>
                 <hr className='w-[98%] mx-auto border-[#b6b4ae]' />
                 <p className='italic text-[#b6b4ae] text-base font-normal'>Your cup of tea?</p>
-                <h1 className="text-3xl md:text-5xl font-bold text-white">Let's Start</h1>
+                <h1 className="text-3xl md:text-5xl font-bold text-white">Let&apos;s Start</h1>
             </div>
 
             {/* Footer Content */}
