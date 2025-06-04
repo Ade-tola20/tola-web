@@ -32,7 +32,7 @@ export default function Hero() {
                             Angular and web development.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0">
-                            <a href="/tola-dev-resume.pdf" download="tola-dev-resume.pdf">
+                            <a href="/Faruq_Oduwole_Resume.pdf" download="Faruq_Oduwole_Resume.pdf">
                                 <button className="liquid-morph-element flex items-center justify-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-white text-base font-semibold">
                                     Resume
                                     <Image src={ExportIcon} alt="Export Icon" className="w-5 h-5 ml-2" />
