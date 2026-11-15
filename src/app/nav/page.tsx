@@ -37,6 +37,7 @@ export default function Navbar() {
                         <button onClick={() => handleNavigate("/")} className="hover-underline cursor-pointer">Home</button>
                         <button onClick={() => handleNavigate("/about")} className="hover-underline cursor-pointer">About</button>
                         <button onClick={() => handleNavigate("/projects")} className="hover-underline cursor-pointer">Projects</button>
+                        <button onClick={() => handleNavigate("/privacy")} className="hover-underline cursor-pointer">Privacy</button>
                     </div>
 
                     {/* Logo */}

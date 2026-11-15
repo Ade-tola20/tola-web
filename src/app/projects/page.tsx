@@ -7,7 +7,7 @@ import { useAnimation } from '../AnimationProvider';
 import MovieBoxThumbnail from "../../../public/images/movie-box-thumbnail.svg"
 import DragDropThumbnail from "../../../public/images/drag-drop-thumbnail.svg"
 import FootballQuizThumbnail from "../../../public/images/football-quiz-thumbnail.svg"
-
+  
 export default function Projects() {
     const { isAnimating } = useAnimation();
 
